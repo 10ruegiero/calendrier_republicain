@@ -83,15 +83,32 @@ def rep_est_bissextile(annee):
 def date_republicaine_depuis_lan_I(jours):
     # Le calendrier commence le 1er Vendémiaire de l'an I
     decade = 0
+    r_jour = 1
     r_mois = 1
     r_annee = 1
+
     jours_ecoulees = 0
 
-    while jours_ecoulees =< jours:
+    while jours_ecoulees < jours:
         jours_ecoulees += 1
-        decade
+        r_jour += 1
 
-    date_republicaine = [decade,r_mois,r_annee]
+        if r_mois < 13:
+            if r_jour % 30 == 0:
+                r_jour = 0
+                r_mois +=1
+        if r_mois == 13:
+            if rep_est_bissextile(r_annee):
+                if r_jour % 6 == 0:
+                    r_jour = 0
+                    r_mois = 0
+                    r_annee +=1
+            elif r_jour % 5 ==0:
+                r_jour = 0
+                r_mois = 0
+                r_annee += 1
+
+    date_republicaine = [r_jour,r_mois,r_annee]
     return date_republicaine
 
 def date_str(date,type_de_mois):
@@ -104,10 +121,14 @@ def periode_str(periode):
     return periode_txt
 
 # Saisie utilisateur
-date_saisie = time.strptime(input("Veuillez saisir une date au format jj/mm/aaaa:"),"%d/%m/%Y")
+# date_saisie = time.strptime(input("Veuillez saisir une date au format jj/mm/aaaa:"),"%d/%m/%Y")
+date_saisie = time.strptime("24/08/2018","%d/%m/%Y")
 annee_saisie = int(date_saisie.tm_year)
 
 # Fonction Test
-print(nbr_jours_depuis_le_22_septembre_1792(date_saisie))
-print(est_bissextile(annee_saisie))
-print(rep_est_bissextile(3))
+jours_depuis_le_1er_vendemiaire = nbr_jours_depuis_le_22_septembre_1792(date_saisie)
+print(jours_depuis_le_1er_vendemiaire)
+print(jours_depuis_le_1er_vendemiaire.days)
+date_rep = date_republicaine_depuis_lan_I(jours_depuis_le_1er_vendemiaire.days)
+print(date_rep)
+print(date_republicaine_depuis_lan_I(125))
