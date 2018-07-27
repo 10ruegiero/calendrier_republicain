@@ -2,6 +2,11 @@
 
 # Programme donnant une date dans le calendrier républicain en fonction de sa date dans le calendrier grégorien
 
+# Import des modules time et datetime
+import time
+import datetime
+
+
 """
 L'année Républcaine
 
@@ -31,6 +36,8 @@ Les mois
         Fructidor (18 août ~ 16 septembre) – Période des fruits
 """
 
+
+"""Définition des mois grégoriens et républicains"""
 mois_gregor = ["Janvier", "Février", "Mars", "Avril", "Mai", "Juin", "Juillet", "Août", "Septembre", "Octobre", "Novembre", "Décembre"]
 
 mois_rep = ["Vendémiaire","Brumaire","Frimaire","Nivôse","Pluviôse","Ventôse","Germinal","Floréal","Prairial""Messidor","Thermidor","Fructidor"]
@@ -52,8 +59,10 @@ periode_mois_rep = {
 }
 
 def nbr_jours_depuis_le_22_septembre_1792(date_greg):
-    return
-
+    date_de_fin = datetime.date()
+    vingtdeux_septembre_1792 = datetime.date(1792,9,22)
+    nbr_jours = datetime.timedelta(date_de_fin - vingtdeux_septembre_1792)
+    return nbr_jours
 
 def date_republicaine_depuis_lan_I(jours):
     decade = 1
@@ -71,5 +80,4 @@ def periode_str(periode):
     periode_txt = "Du " + date_str(periode[0]) + " au " + date_str(periode[1])
     return periode_txt
 
-date_demandee = input("Veuillez saisir une date: ")
-print(date_demandee)
+date_demandee = time.strptime(input("Veuillez saisir une date au format jj/mm/aaaa:"),"%d/%m/%Y")
