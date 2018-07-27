@@ -40,7 +40,7 @@ Les mois
 """Définition des mois grégoriens et républicains"""
 mois_gregor = ["Janvier", "Février", "Mars", "Avril", "Mai", "Juin", "Juillet", "Août", "Septembre", "Octobre", "Novembre", "Décembre"]
 
-mois_rep = ["Vendémiaire","Brumaire","Frimaire","Nivôse","Pluviôse","Ventôse","Germinal","Floréal","Prairial""Messidor","Thermidor","Fructidor","Sanculottides"]
+mois_rep = ["Vendémiaire","Brumaire","Frimaire","Nivôse","Pluviôse","Ventôse","Germinal","Floréal","Prairial","Messidor","Thermidor","Fructidor","Sanculottides"]
 
 
 periode_mois_rep = {
@@ -111,24 +111,22 @@ def date_republicaine_depuis_lan_I(jours):
     date_republicaine = [r_jour,r_mois,r_annee]
     return date_republicaine
 
-def date_str(date,type_de_mois):
-    date_txt = str(date[0]) + " " + type_de_mois[date[1] - 1]
-    return date_txt
-
-
-def periode_str(periode):
-    periode_txt = "Du " + date_str(periode[0]) + " au " + date_str(periode[1])
-    return periode_txt
+def print_date_republicaine(date_republicaine):
+    date_text = "%i %s de l'an %i" % (date_republicaine[0],mois_rep[date_republicaine[1]-1],date_republicaine[2])
+    print(date_text)
 
 # Saisie utilisateur
 # date_saisie = time.strptime(input("Veuillez saisir une date au format jj/mm/aaaa:"),"%d/%m/%Y")
-date_saisie = time.strptime("24/08/2018","%d/%m/%Y")
+date_saisie = time.strptime("22/9/1792","%d/%m/%Y")
 annee_saisie = int(date_saisie.tm_year)
 
 # Fonction Test
 jours_depuis_le_1er_vendemiaire = nbr_jours_depuis_le_22_septembre_1792(date_saisie)
 print(jours_depuis_le_1er_vendemiaire)
-print(jours_depuis_le_1er_vendemiaire.days)
 date_rep = date_republicaine_depuis_lan_I(jours_depuis_le_1er_vendemiaire.days)
+
 print(date_rep)
+print_date_republicaine(date_rep)
+
 print(date_republicaine_depuis_lan_I(125))
+print_date_republicaine(date_republicaine_depuis_lan_I(125))
