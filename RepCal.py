@@ -98,15 +98,22 @@ def format_date_republicaine(date_republicaine):
     date_text = "%i %s de l'an %i" % (date_republicaine[0],mois_rep[date_republicaine[1]-1],date_republicaine[2])
     return date_text
 
-# Saisie utilisateur
-date_saisie = time.strptime(input("Veuillez saisir une date au format jj/mm/aaaa:"),"%d/%m/%Y")
-
 # Fonction Main
-jours_depuis_le_1er_vendemiaire = nbr_jours_depuis_le_22_septembre_1792(date_saisie)
-date_rep = date_republicaine_depuis_lan_I(jours_depuis_le_1er_vendemiaire.days)
+def main():
+    # Saisie utilisateur
+    date_saisie = time.strptime(input("Veuillez saisir une date au format jj/mm/aaaa:"),"%d/%m/%Y")
 
-print(date_rep)
-print_date_republicaine(date_rep)
+    # Calcul du nombre de jour depuis le 22 septembre 1792
+    jours_depuis_le_1er_vendemiaire = nbr_jours_depuis_le_22_septembre_1792(date_saisie)
 
-print(date_republicaine_depuis_lan_I(125))
-print_date_republicaine(date_republicaine_depuis_lan_I(125))
+    # Parcours fictif du calendrier républicain
+    date_rep = date_republicaine_depuis_lan_I(jours_depuis_le_1er_vendemiaire.days)
+
+    # Formatage de la date en texte
+    date_rep = format_date_republicaine(date_rep)
+
+    #Sortie console
+    print(date_rep)
+
+if __name__== "__main__":
+  main()
