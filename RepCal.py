@@ -12,12 +12,10 @@ L'année Républcaine
 
 L'année du calendrier républicain était découpée en douze mois de trente jours chacun (soit 360 jours)
 # Plus cinq jours complémentaires les années communes ou six les années sextiles
-
 Elle débute le 1er vendémiaire an I (22 septembre 1792),
 
 
 Les mois
-
     Mois d'automne (terminaison en -aire, du latin -arius, suffixe adjectival)
         Vendémiaire (22 septembre ~ 21 octobre) – Période des vendanges
         Brumaire (22 octobre ~ 20 novembre) – Période des brumes et des brouillards
@@ -37,7 +35,7 @@ Les mois
 """
 
 
-"""Définition des mois grégoriens et républicains"""
+"""Liste des mois grégoriens et républicains"""
 mois_gregor = ["Janvier", "Février", "Mars", "Avril", "Mai", "Juin", "Juillet", "Août", "Septembre", "Octobre", "Novembre", "Décembre"]
 
 mois_rep = ["Vendémiaire","Brumaire","Frimaire","Nivôse","Pluviôse","Ventôse","Germinal","Floréal","Prairial","Messidor","Thermidor","Fructidor","Sanculottides"]
