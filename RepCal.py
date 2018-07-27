@@ -58,6 +58,7 @@ periode_mois_rep = {
     "Fructidor": [[18, 8], [21, 9]]
 }
 
+# Fonction calculant le nombre de jours entre une date donnée et le 22 septembre 1792, soit le 1er Vendémiaire de l'an I
 def nbr_jours_depuis_le_22_septembre_1792(date_greg):
     date_cible = datetime.date(date_greg.tm_year,date_greg.tm_mon,date_greg.tm_mday)
     vingtdeux_septembre_1792 = datetime.date(1792,9,22)
@@ -80,7 +81,9 @@ def periode_str(periode):
     periode_txt = "Du " + date_str(periode[0]) + " au " + date_str(periode[1])
     return periode_txt
 
+# Saisie utilisateur
 date_saisie = time.strptime(input("Veuillez saisir une date au format jj/mm/aaaa:"),"%d/%m/%Y")
-delta = nbr_jours_depuis_le_22_septembre_1792(date_saisie)
 
+# Fonction Test
+delta = nbr_jours_depuis_le_22_septembre_1792(date_saisie)
 print(delta)
