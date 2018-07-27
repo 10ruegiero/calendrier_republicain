@@ -77,16 +77,16 @@ def date_republicaine_depuis_lan_I(jours):
         r_jour += 1
 
         if r_mois < 13:
-            if r_jour % 30 == 0:
+            if r_jour == 30:
                 r_jour = 0
                 r_mois +=1
         if r_mois == 13:
             if rep_est_bissextile(r_annee):
-                if r_jour % 6 == 0:
+                if r_jour ==6 :
                     r_jour = 0
                     r_mois = 0
                     r_annee +=1
-            elif r_jour % 5 ==0:
+            elif r_jour == 5 :
                 r_jour = 0
                 r_mois = 0
                 r_annee += 1
@@ -101,7 +101,9 @@ def format_date_republicaine(date_republicaine):
 # Fonction Main
 def main():
     # Saisie utilisateur
-    date_saisie = time.strptime(input("Veuillez saisir une date au format jj/mm/aaaa:"),"%d/%m/%Y")
+    # date_saisie = time.strptime(input("Veuillez saisir une date au format jj/mm/aaaa:"),"%d/%m/%Y")
+    date_saisie = time.strptime("28/07/1805","%d/%m/%Y")
+
 
     # Calcul du nombre de jour depuis le 22 septembre 1792
     jours_depuis_le_1er_vendemiaire = nbr_jours_depuis_le_22_septembre_1792(date_saisie)
