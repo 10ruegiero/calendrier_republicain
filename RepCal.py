@@ -1,14 +1,16 @@
 #!/usr/bin/python
 
-# Programme donnant une date dans le calendrier républicain
-# en fonction de sa date dans le calendrier grégorien
-
-# L'année du calendrier républicain était découpée en douze mois de trente jours chacun (soit 360 jours)
-# Plus cinq jours complémentaires les années communes ou six les années sextiles
-
-# Elle débute le 1er vendémiaire an I (22 septembre 1792),
+# Programme donnant une date dans le calendrier républicain en fonction de sa date dans le calendrier grégorien
 
 """
+L'année Républcaine
+
+L'année du calendrier républicain était découpée en douze mois de trente jours chacun (soit 360 jours)
+# Plus cinq jours complémentaires les années communes ou six les années sextiles
+
+Elle débute le 1er vendémiaire an I (22 septembre 1792),
+
+
 Les mois
 
     Mois d'automne (terminaison en -aire, du latin -arius, suffixe adjectival)
@@ -48,6 +50,8 @@ periode_mois_rep = {
     "Thermidor": [[19, 7], [17, 8]],
     "Fructidor": [[18, 8], [21, 9]]
 }
+
+def nbr_jours_depuis_le_22_septembre_1792(date_greg):
 
 
 def date_republicaine_depuis_lan_I(jours):
