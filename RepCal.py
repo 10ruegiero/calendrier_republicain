@@ -74,7 +74,6 @@ def date_republicaine_depuis_lan_I(jours):
 
     while jours_ecoulees < jours:
         jours_ecoulees += 1
-        r_jour += 1
 
         if r_mois < 13:
             if r_jour == 30:
@@ -82,14 +81,17 @@ def date_republicaine_depuis_lan_I(jours):
                 r_mois +=1
         if r_mois == 13:
             if rep_est_bissextile(r_annee):
-                if r_jour ==6 :
+                if r_jour == 6 :
                     r_jour = 0
-                    r_mois = 0
+                    r_mois = 1
                     r_annee +=1
-            elif r_jour == 5 :
-                r_jour = 0
-                r_mois = 0
-                r_annee += 1
+            else:
+                if r_jour == 5 :
+                    r_jour = 0
+                    r_mois = 1
+                    r_annee += 1
+
+        r_jour += 1
 
     date_republicaine = [r_jour,r_mois,r_annee]
     return date_republicaine
