@@ -43,21 +43,6 @@ mois_gregor = ["Janvier", "Février", "Mars", "Avril", "Mai", "Juin", "Juillet",
 mois_rep = ["Vendémiaire","Brumaire","Frimaire","Nivôse","Pluviôse","Ventôse","Germinal","Floréal","Prairial","Messidor","Thermidor","Fructidor","Sanculottides"]
 
 
-periode_mois_rep = {
-    "Vendémiaire": [[22, 9], [21, 10]],
-    "Brumaire": [[22, 10], [20, 11]],
-    "Frimaire": [[21, 11], [20, 12]],
-    "Nivôse": [[21, 12], [19, 1]],
-    "Pluviôse": [[20, 1], [18, 2]],
-    "Ventôse": [[19, 2], [20, 3]],
-    "Germinal": [[21, 3], [19, 4]],
-    "Floréal": [[20, 4], [19, 5]],
-    "Prairial": [[20, 5], [18, 6]],
-    "Messidor": [[19, 6], [18, 7]],
-    "Thermidor": [[19, 7], [17, 8]],
-    "Fructidor": [[18, 8], [21, 9]]
-}
-
 # Fonction calculant le nombre de jours entre une date donnée et le 22 septembre 1792, soit le 1er Vendémiaire de l'an I
 def nbr_jours_depuis_le_22_septembre_1792(date_greg):
     date_cible = datetime.date(date_greg.tm_year,date_greg.tm_mon,date_greg.tm_mday)
