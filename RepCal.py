@@ -52,6 +52,7 @@ periode_mois_rep = {
 }
 
 def nbr_jours_depuis_le_22_septembre_1792(date_greg):
+    return
 
 
 def date_republicaine_depuis_lan_I(jours):
@@ -69,3 +70,6 @@ def date_str(date,type_de_mois):
 def periode_str(periode):
     periode_txt = "Du " + date_str(periode[0]) + " au " + date_str(periode[1])
     return periode_txt
+
+date_demandee = input("Veuillez saisir une date: ")
+print(date_demandee)
