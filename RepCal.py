@@ -103,8 +103,13 @@ def format_date_republicaine(date_republicaine):
 # Fonction Main
 def main():
     # Saisie utilisateur
-    # date_saisie = time.strptime(input("Veuillez saisir une date au format jj/mm/aaaa:"),"%d/%m/%Y")
-    date_saisie = time.strptime("28/07/2018","%d/%m/%Y")
+    date_saisie = time.strptime(input("Veuillez saisir une date au format jj/mm/aaaa:"),"%d/%m/%Y")
+
+    # Debug input
+    # date_saisie = time.strptime("28/07/2018","%d/%m/%Y")
+    # date_saisie = time.strptime("22/09/1792","%d/%m/%Y")
+    # date_saisie = time.strptime("24/11/1793","%d/%m/%Y")
+
 
 
     # Calcul du nombre de jour depuis le 22 septembre 1792
