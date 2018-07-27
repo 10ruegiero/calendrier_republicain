@@ -40,7 +40,7 @@ Les mois
 """Définition des mois grégoriens et républicains"""
 mois_gregor = ["Janvier", "Février", "Mars", "Avril", "Mai", "Juin", "Juillet", "Août", "Septembre", "Octobre", "Novembre", "Décembre"]
 
-mois_rep = ["Vendémiaire","Brumaire","Frimaire","Nivôse","Pluviôse","Ventôse","Germinal","Floréal","Prairial""Messidor","Thermidor","Fructidor"]
+mois_rep = ["Vendémiaire","Brumaire","Frimaire","Nivôse","Pluviôse","Ventôse","Germinal","Floréal","Prairial""Messidor","Thermidor","Fructidor","Sanculottides"]
 
 
 periode_mois_rep = {
@@ -59,9 +59,9 @@ periode_mois_rep = {
 }
 
 def nbr_jours_depuis_le_22_septembre_1792(date_greg):
-    date_de_fin = datetime.date()
+    date_cible = datetime.date(date_greg.tm_year,date_greg.tm_mon,date_greg.tm_mday)
     vingtdeux_septembre_1792 = datetime.date(1792,9,22)
-    nbr_jours = datetime.timedelta(date_de_fin - vingtdeux_septembre_1792)
+    nbr_jours = date_cible - vingtdeux_septembre_1792
     return nbr_jours
 
 def date_republicaine_depuis_lan_I(jours):
@@ -80,4 +80,7 @@ def periode_str(periode):
     periode_txt = "Du " + date_str(periode[0]) + " au " + date_str(periode[1])
     return periode_txt
 
-date_demandee = time.strptime(input("Veuillez saisir une date au format jj/mm/aaaa:"),"%d/%m/%Y")
+date_saisie = time.strptime(input("Veuillez saisir une date au format jj/mm/aaaa:"),"%d/%m/%Y")
+delta = nbr_jours_depuis_le_22_septembre_1792(date_saisie)
+
+print(delta)
