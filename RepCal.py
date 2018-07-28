@@ -48,21 +48,21 @@ def nbr_jours_depuis_le_22_septembre_1792(date_greg):
     nbr_jours = date_cible - vingtdeux_septembre_1792
     return nbr_jours
 
-#Fonction testant la bissextilité
+# Fonction testant la bissextilité
 def est_bissextile(annee):
     if (annee % 4 == 0 and annee % 100 != 0) or annee % 400 == 0:
         return True
     else:
         return False
 
-#Fonction testant la bissextilité d'une année républicaine
+# Fonction testant la bissextilité d'une année républicaine
 def rep_est_bissextile(annee):
     if (annee % 4 == 3 and annee % 100 != 3) or annee % 400 == 3:
         return True
     else:
         return False
 
-
+# Fonction déroulant le calendrier républicain depuis le 1er Vendémiaire de l'an I, en fonction du nombre de jours demandés
 def date_republicaine_depuis_lan_I(jours):
     # Le calendrier commence le 1er Vendémiaire de l'an I
     decade = 0
@@ -96,6 +96,7 @@ def date_republicaine_depuis_lan_I(jours):
     date_republicaine = [r_jour,r_mois,r_annee]
     return date_republicaine
 
+# Fonction transformation un date_republicaine sous format string
 def format_date_republicaine(date_republicaine):
     date_text = "%i %s de l'an %i" % (date_republicaine[0],mois_rep[date_republicaine[1]-1],date_republicaine[2])
     return date_text
