@@ -10,9 +10,7 @@ class daterepublicaine(datetime.date):
                 "Prairial", "Messidor", "Thermidor", "Fructidor", "Sanculottides"]
 
     def __init__(self,year,month,day):
-        self.year = year
-        self.month = month
-        self.day = day
+        self.replace(year,month,day)
 
     def __str__(self):
         date_text = "%i %s de l'an %i" % (self.day, mois_rep[self.month - 1], date_republicaine[2])
