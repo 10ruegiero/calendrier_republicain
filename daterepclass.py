@@ -16,8 +16,14 @@ class daterepublicaine(datetime.date):
         date_text = "%i %s de l'an %i" % (self.day, mois_rep[self.month - 1], date_republicaine[2])
         return date_text
 
-    def est_bissextile(self):
+    def suis_bissextile(self):
         if (self.year % 4 == 3 and self.year % 100 != 3) or self.year % 400 == 3:
+            return True
+        else:
+            return False
+
+    def est_bissextile(year):
+        if (year % 4 == 3 and year % 100 != 3) or year % 400 == 3:
             return True
         else:
             return False
