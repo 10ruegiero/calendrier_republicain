@@ -10,10 +10,16 @@ from daterepclass import daterepublicaine
 # Fonction déroulant le calendrier républicain depuis le 1er Vendémiaire de l'an I
 # Fonction d'une date grégorienne saisie
 def date_republicaine(date_greg):
+    # Formatage de la date grégorienne en objet date
     date_cible = datetime.date(date_greg.tm_year, date_greg.tm_mon, date_greg.tm_mday)
+
+    # Jour I : 1er vendémiaire an I
     vingtdeux_septembre_1792 = datetime.date(1792, 9, 22)
+
+    # Delta
     nbr_jours = date_cible - vingtdeux_septembre_1792
 
+    # Initialisation
     jours_ecoulees = 0
     r_year = 1
     r_month = 1
