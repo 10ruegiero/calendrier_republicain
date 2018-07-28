@@ -8,15 +8,13 @@ import datetime
 from daterepclass import daterepublicaine
 
 
-# Fonction calculant le nombre de jours entre une date donnée et le 22 septembre 1792, soit le 1er Vendémiaire de l'an I
-def nbr_jours_depuis_le_22_septembre_1792(date_greg):
-    date_cible = datetime.date(date_greg.tm_year,date_greg.tm_mon,date_greg.tm_mday)
-    vingtdeux_septembre_1792 = datetime.date(1792,9,22)
-    nbr_jours = date_cible - vingtdeux_septembre_1792
-    return nbr_jours
+
 
 # Fonction déroulant le calendrier républicain depuis le 1er Vendémiaire de l'an I, en fonction du nombre de jours demandés
-def date_republicaine_depuis_lan_I(jours):
+def date_republicaine(date_greg):
+    date_cible = datetime.date(date_greg.tm_year, date_greg.tm_mon, date_greg.tm_mday)
+    vingtdeux_septembre_1792 = datetime.date(1792, 9, 22)
+    nbr_jours = date_cible - vingtdeux_septembre_1792
 
     jours_ecoulees = 0
     r_year = 1
@@ -24,7 +22,7 @@ def date_republicaine_depuis_lan_I(jours):
     r_day = 1
 
     # Parcours du calendrier républicain
-    while jours_ecoulees < jours:
+    while jours_ecoulees < nbr_jours.days:
         jours_ecoulees += 1
 
         if r_month < 13:
@@ -58,13 +56,8 @@ def main():
     # date_saisie = time.strptime("22/09/1792","%d/%m/%Y")
     # date_saisie = time.strptime("24/11/1793","%d/%m/%Y")
 
-
-
-    # Calcul du nombre de jour depuis le 22 septembre 1792
-    jours_depuis_le_1er_vendemiaire = nbr_jours_depuis_le_22_septembre_1792(date_saisie)
-
-    # Parcours fictif du calendrier républicain
-    date_rep = date_republicaine_depuis_lan_I(jours_depuis_le_1er_vendemiaire.days)
+    # Conversion de la date grégorienne en date républicaine
+    date_rep = date_republicaine(date_saisie)
 
     #Sortie console
     print(date_rep)
