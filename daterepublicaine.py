@@ -3,7 +3,7 @@
 import datetime
 
 # Définition d'un objet date républicaine
-class daterepublicaine(datetime.datetime):
+class daterepublicaine(datetime.date):
     # Liste des 12 mois républicains
     # (13 mois avec les Sansculottides, 5 jours additionnels en fin d'année, 6 les années bisexxtiles)
     mois_rep = ["Vendémiaire", "Brumaire", "Frimaire", "Nivôse", "Pluviôse", "Ventôse", "Germinal", "Floréal",
