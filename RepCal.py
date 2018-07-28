@@ -5,7 +5,7 @@
 # Import des modules time et datetime
 import time
 import datetime
-import  daterepublicaine
+from daterepublicaine import daterepublicaine
 
 
 # Fonction calculant le nombre de jours entre une date donnée et le 22 septembre 1792, soit le 1er Vendémiaire de l'an I
@@ -21,7 +21,7 @@ def date_republicaine_depuis_lan_I(jours):
 
 
     # Création d'un objet date républicaine
-    date_rep = daterepublicaine.date(1,1,1)
+    date_rep = daterepublicaine(1,1,1)
 
     jours_ecoulees = 0
     while jours_ecoulees < jours:
@@ -49,10 +49,10 @@ def date_republicaine_depuis_lan_I(jours):
 # Fonction Main
 def main():
     # Saisie utilisateur
-    date_saisie = time.strptime(input("Veuillez saisir une date au format jj/mm/aaaa:"),"%d/%m/%Y")
+    #date_saisie = time.strptime(input("Veuillez saisir une date au format jj/mm/aaaa:"),"%d/%m/%Y")
 
     # Debug input
-    # date_saisie = time.strptime("28/07/2018","%d/%m/%Y")
+    date_saisie = time.strptime("28/07/2018","%d/%m/%Y")
     # date_saisie = time.strptime("22/09/1792","%d/%m/%Y")
     # date_saisie = time.strptime("24/11/1793","%d/%m/%Y")
 
