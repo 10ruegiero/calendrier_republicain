@@ -53,12 +53,12 @@ def date_republicaine(date_greg):
 # Fonction Main
 def main():
     # Saisie utilisateur
-    #date_saisie = time.strptime(input("Veuillez saisir une date au format jj/mm/aaaa:"),"%d/%m/%Y")
+    date_saisie = time.strptime(input("Veuillez saisir une date au format jj/mm/aaaa:"),"%d/%m/%Y")
 
     # Debug input
     # date_saisie = time.strptime("28/07/2018","%d/%m/%Y")
     # date_saisie = time.strptime("22/09/1792","%d/%m/%Y")
-    date_saisie = time.strptime("13/03/1987","%d/%m/%Y")
+    # date_saisie = time.strptime("13/03/1987","%d/%m/%Y")
     # date_saisie = time.strptime("23/08/1990","%d/%m/%Y")
 
     # Conversion de la date grégorienne en date républicaine
