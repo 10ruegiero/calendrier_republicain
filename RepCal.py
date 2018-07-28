@@ -7,10 +7,8 @@ import time
 import datetime
 from daterepclass import daterepublicaine
 
-
-
-
-# Fonction déroulant le calendrier républicain depuis le 1er Vendémiaire de l'an I, en fonction du nombre de jours demandés
+# Fonction déroulant le calendrier républicain depuis le 1er Vendémiaire de l'an I
+# Fonction d'une date grégorienne saisie
 def date_republicaine(date_greg):
     date_cible = datetime.date(date_greg.tm_year, date_greg.tm_mon, date_greg.tm_mday)
     vingtdeux_septembre_1792 = datetime.date(1792, 9, 22)
@@ -52,9 +50,10 @@ def main():
     #date_saisie = time.strptime(input("Veuillez saisir une date au format jj/mm/aaaa:"),"%d/%m/%Y")
 
     # Debug input
-    date_saisie = time.strptime("28/07/2018","%d/%m/%Y")
+    # date_saisie = time.strptime("28/07/2018","%d/%m/%Y")
     # date_saisie = time.strptime("22/09/1792","%d/%m/%Y")
-    # date_saisie = time.strptime("24/11/1793","%d/%m/%Y")
+    date_saisie = time.strptime("13/03/1987","%d/%m/%Y")
+    # date_saisie = time.strptime("23/08/1990","%d/%m/%Y")
 
     # Conversion de la date grégorienne en date républicaine
     date_rep = date_republicaine(date_saisie)
