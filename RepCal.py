@@ -5,7 +5,7 @@
 # Import des modules time et datetime
 import time
 import datetime
-from daterepublicaine import daterepublicaine
+from daterepclass import daterepublicaine
 
 
 # Fonction calculant le nombre de jours entre une date donnée et le 22 septembre 1792, soit le 1er Vendémiaire de l'an I
